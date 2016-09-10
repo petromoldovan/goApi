@@ -1,3 +1,13 @@
-/**
- * Created by Petro on 10.09.2016.
- */
+import React from 'react';
+
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+            Hello World!!!
+        </div>
+    );
+    }
+}
+
+export default App;
