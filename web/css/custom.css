@@ -1,0 +1,8 @@
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    position: relative;
+}
+
+.navbar {
+    margin-bottom: -40px;
+}
