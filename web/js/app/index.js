@@ -60,19 +60,19 @@
 
 	var _Layout2 = _interopRequireDefault(_Layout);
 
-	var _About = __webpack_require__(236);
+	var _About = __webpack_require__(238);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Contact = __webpack_require__(237);
+	var _Contact = __webpack_require__(239);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _Header = __webpack_require__(238);
+	var _Header = __webpack_require__(236);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Portfolio = __webpack_require__(239);
+	var _Portfolio = __webpack_require__(240);
 
 	var _Portfolio2 = _interopRequireDefault(_Portfolio);
 
@@ -27133,7 +27133,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(172);
+	var _Header = __webpack_require__(236);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	var _Footer = __webpack_require__(237);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27155,25 +27161,13 @@
 	    _createClass(Layout, [{
 	        key: 'render',
 	        value: function render() {
+	            console.log(this);
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(
-	                    'h1',
-	                    null,
-	                    'Layout'
-	                ),
+	                _react2.default.createElement(_Header2.default, null),
 	                this.props.children,
-	                _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: 'about' },
-	                    'About'
-	                ),
-	                _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: 'contact' },
-	                    'Contact'
-	                )
+	                _react2.default.createElement(_Footer2.default, null)
 	            );
 	        }
 	    }]);
@@ -27188,6 +27182,291 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Header = function (_React$Component) {
+	    _inherits(Header, _React$Component);
+
+	    function Header() {
+	        _classCallCheck(this, Header);
+
+	        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+	    }
+
+	    _createClass(Header, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'nav',
+	                { id: 'mainNav', className: 'navbar navbar-default navbar-fixed-top navbar-custom' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'navbar-header page-scroll' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
+	                            _react2.default.createElement(
+	                                'span',
+	                                { className: 'sr-only' },
+	                                'Toggle navigation'
+	                            ),
+	                            ' Menu ',
+	                            _react2.default.createElement('i', { className: 'fa fa-bars' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { className: 'navbar-brand', href: '#page-top' },
+	                            'awesome goReactApi'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { className: 'nav navbar-nav navbar-right' },
+	                            _react2.default.createElement(
+	                                'li',
+	                                { className: 'hidden' },
+	                                _react2.default.createElement('a', { href: '#page-top' })
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                { className: 'page-scroll' },
+	                                _react2.default.createElement(
+	                                    _reactRouter.Link,
+	                                    { to: '/' },
+	                                    'Portfolio'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                { className: 'page-scroll' },
+	                                _react2.default.createElement(
+	                                    _reactRouter.Link,
+	                                    { to: 'about' },
+	                                    'About'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                { className: 'page-scroll' },
+	                                _react2.default.createElement(
+	                                    _reactRouter.Link,
+	                                    { to: 'contact' },
+	                                    'Contact'
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Header;
+	}(_react2.default.Component);
+
+	exports.default = Header;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footer = function (_React$Component) {
+	    _inherits(Footer, _React$Component);
+
+	    function Footer() {
+	        _classCallCheck(this, Footer);
+
+	        return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	    }
+
+	    _createClass(Footer, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "footer",
+	                { className: "text-center" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "footer-above" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "container" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "row" },
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "footer-col col-md-4" },
+	                                _react2.default.createElement(
+	                                    "h3",
+	                                    null,
+	                                    "Location"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "p",
+	                                    null,
+	                                    "3481 Melrose Place",
+	                                    _react2.default.createElement("br", null),
+	                                    "Beverly Hills, CA 90210"
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "footer-col col-md-4" },
+	                                _react2.default.createElement(
+	                                    "h3",
+	                                    null,
+	                                    "Around the Web"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "ul",
+	                                    { className: "list-inline" },
+	                                    _react2.default.createElement(
+	                                        "li",
+	                                        null,
+	                                        _react2.default.createElement(
+	                                            "a",
+	                                            { href: "#", className: "btn-social btn-outline" },
+	                                            _react2.default.createElement("i", { className: "fa fa-fw fa-facebook" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "li",
+	                                        null,
+	                                        _react2.default.createElement(
+	                                            "a",
+	                                            { href: "#", className: "btn-social btn-outline" },
+	                                            _react2.default.createElement("i", { className: "fa fa-fw fa-google-plus" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "li",
+	                                        null,
+	                                        _react2.default.createElement(
+	                                            "a",
+	                                            { href: "#", className: "btn-social btn-outline" },
+	                                            _react2.default.createElement("i", { className: "fa fa-fw fa-twitter" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "li",
+	                                        null,
+	                                        _react2.default.createElement(
+	                                            "a",
+	                                            { href: "#", className: "btn-social btn-outline" },
+	                                            _react2.default.createElement("i", { className: "fa fa-fw fa-linkedin" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "li",
+	                                        null,
+	                                        _react2.default.createElement(
+	                                            "a",
+	                                            { href: "#", className: "btn-social btn-outline" },
+	                                            _react2.default.createElement("i", { className: "fa fa-fw fa-dribbble" })
+	                                        )
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "footer-col col-md-4" },
+	                                _react2.default.createElement(
+	                                    "h3",
+	                                    null,
+	                                    "About Freelancer"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "p",
+	                                    null,
+	                                    "Freelance is a free to use, open source Bootstrap theme created by ",
+	                                    _react2.default.createElement(
+	                                        "a",
+	                                        { href: "http://startbootstrap.com" },
+	                                        "Start Bootstrap"
+	                                    ),
+	                                    "."
+	                                )
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "footer-below" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "container" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "row" },
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-lg-12" },
+	                                "Copyright © Your Website 2016"
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Footer;
+	}(_react2.default.Component);
+
+	exports.default = Footer;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -27217,12 +27496,61 @@
 	    }
 
 	    _createClass(About, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'h1',
-	                null,
-	                'About'
+	                "section",
+	                { className: "success", id: "about" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "container" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "row" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-lg-12 text-center" },
+	                            _react2.default.createElement(
+	                                "h2",
+	                                null,
+	                                "About"
+	                            ),
+	                            _react2.default.createElement("hr", { className: "star-light" })
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "row" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-lg-4 col-lg-offset-2" },
+	                            _react2.default.createElement(
+	                                "p",
+	                                null,
+	                                "Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization."
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-lg-4" },
+	                            _react2.default.createElement(
+	                                "p",
+	                                null,
+	                                "Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-lg-8 col-lg-offset-2 text-center" },
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "#", className: "btn btn-lg btn-outline" },
+	                                _react2.default.createElement("i", { className: "fa fa-download" }),
+	                                " Download Theme"
+	                            )
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }]);
@@ -27233,10 +27561,10 @@
 	exports.default = About;
 
 /***/ },
-/* 237 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -27266,12 +27594,116 @@
 	    }
 
 	    _createClass(Contact, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Contact'
+	                "section",
+	                { id: "contact" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "container" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "row" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-lg-12 text-center" },
+	                            _react2.default.createElement(
+	                                "h2",
+	                                null,
+	                                "Contact Me"
+	                            ),
+	                            _react2.default.createElement("hr", { className: "star-primary" })
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "row" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-lg-8 col-lg-offset-2" },
+	                            _react2.default.createElement(
+	                                "form",
+	                                { name: "sentMessage", id: "contactForm", noValidate: true },
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "row control-group" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "form-group col-xs-12 floating-label-form-group controls" },
+	                                        _react2.default.createElement(
+	                                            "label",
+	                                            null,
+	                                            "Name"
+	                                        ),
+	                                        _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Name", id: "name", required: true, "data-validation-required-message": "Please enter your name." }),
+	                                        _react2.default.createElement("p", { className: "help-block text-danger" })
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "row control-group" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "form-group col-xs-12 floating-label-form-group controls" },
+	                                        _react2.default.createElement(
+	                                            "label",
+	                                            null,
+	                                            "Email Address"
+	                                        ),
+	                                        _react2.default.createElement("input", { type: "email", className: "form-control", placeholder: "Email Address", id: "email", required: true, "data-validation-required-message": "Please enter your email address." }),
+	                                        _react2.default.createElement("p", { className: "help-block text-danger" })
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "row control-group" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "form-group col-xs-12 floating-label-form-group controls" },
+	                                        _react2.default.createElement(
+	                                            "label",
+	                                            null,
+	                                            "Phone Number"
+	                                        ),
+	                                        _react2.default.createElement("input", { type: "tel", className: "form-control", placeholder: "Phone Number", id: "phone", required: true, "data-validation-required-message": "Please enter your phone number." }),
+	                                        _react2.default.createElement("p", { className: "help-block text-danger" })
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "row control-group" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "form-group col-xs-12 floating-label-form-group controls" },
+	                                        _react2.default.createElement(
+	                                            "label",
+	                                            null,
+	                                            "Message"
+	                                        ),
+	                                        _react2.default.createElement("textarea", { rows: "5", className: "form-control", placeholder: "Message", id: "message", required: true, "data-validation-required-message": "Please enter a message." }),
+	                                        _react2.default.createElement("p", { className: "help-block text-danger" })
+	                                    )
+	                                ),
+	                                _react2.default.createElement("br", null),
+	                                _react2.default.createElement("div", { id: "success" }),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "row" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "form-group col-xs-12" },
+	                                        _react2.default.createElement(
+	                                            "button",
+	                                            { type: "submit", className: "btn btn-success btn-lg" },
+	                                            "Send"
+	                                        )
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }]);
@@ -27282,122 +27714,10 @@
 	exports.default = Contact;
 
 /***/ },
-/* 238 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Header = function (_React$Component) {
-	    _inherits(Header, _React$Component);
-
-	    function Header() {
-	        _classCallCheck(this, Header);
-
-	        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-	    }
-
-	    _createClass(Header, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "nav",
-	                { id: "mainNav", className: "navbar navbar-default navbar-fixed-top navbar-custom" },
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "container" },
-	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "navbar-header page-scroll" },
-	                        _react2.default.createElement(
-	                            "button",
-	                            { type: "button", className: "navbar-toggle", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1" },
-	                            _react2.default.createElement(
-	                                "span",
-	                                { className: "sr-only" },
-	                                "Toggle navigation"
-	                            ),
-	                            " Menu ",
-	                            _react2.default.createElement("i", { className: "fa fa-bars" })
-	                        ),
-	                        _react2.default.createElement(
-	                            "a",
-	                            { className: "navbar-brand", href: "#page-top" },
-	                            "Start Bootstrap"
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
-	                        _react2.default.createElement(
-	                            "ul",
-	                            { className: "nav navbar-nav navbar-right" },
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "hidden" },
-	                                _react2.default.createElement("a", { href: "#page-top" })
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "page-scroll" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#portfolio" },
-	                                    "Portfolio"
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "page-scroll" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#about" },
-	                                    "About"
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "page-scroll" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#contact" },
-	                                    "Contact"
-	                                )
-	                            )
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return Header;
-	}(_react2.default.Component);
-
-	exports.default = Header;
-
-/***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -27427,12 +27747,177 @@
 	    }
 
 	    _createClass(Portfolio, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'h1',
+	                "div",
 	                null,
-	                'Portfolio'
+	                _react2.default.createElement(
+	                    "header",
+	                    null,
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "container" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "row" },
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-lg-12" },
+	                                _react2.default.createElement("img", { className: "img-responsive", src: "img/profile.png", alt: "" }),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "intro-text" },
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        { className: "name" },
+	                                        "awesome goReactApi"
+	                                    ),
+	                                    _react2.default.createElement("hr", { className: "star-light" }),
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        { className: "skills" },
+	                                        "Potfolio Project - React SPA - goReactApi"
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "section",
+	                    { id: "portfolio" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "container" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "row" },
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-lg-12 text-center" },
+	                                _react2.default.createElement(
+	                                    "h2",
+	                                    null,
+	                                    "Portfolio"
+	                                ),
+	                                _react2.default.createElement("hr", { className: "star-primary" })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "row" },
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-4 portfolio-item" },
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#", className: "portfolio-link", "data-toggle": "modal" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "caption" },
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "caption-content" },
+	                                            _react2.default.createElement("i", { className: "fa fa-search-plus fa-3x" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement("img", { src: "img/portfolio/cabin.png", className: "img-responsive", alt: "" })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-4 portfolio-item" },
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#", className: "portfolio-link", "data-toggle": "modal" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "caption" },
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "caption-content" },
+	                                            _react2.default.createElement("i", { className: "fa fa-search-plus fa-3x" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement("img", { src: "img/portfolio/cake.png", className: "img-responsive", alt: "" })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-4 portfolio-item" },
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#", className: "portfolio-link", "data-toggle": "modal" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "caption" },
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "caption-content" },
+	                                            _react2.default.createElement("i", { className: "fa fa-search-plus fa-3x" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement("img", { src: "img/portfolio/circus.png", className: "img-responsive", alt: "" })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-4 portfolio-item" },
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#", className: "portfolio-link", "data-toggle": "modal" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "caption" },
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "caption-content" },
+	                                            _react2.default.createElement("i", { className: "fa fa-search-plus fa-3x" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement("img", { src: "img/portfolio/game.png", className: "img-responsive", alt: "" })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-4 portfolio-item" },
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#", className: "portfolio-link", "data-toggle": "modal" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "caption" },
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "caption-content" },
+	                                            _react2.default.createElement("i", { className: "fa fa-search-plus fa-3x" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement("img", { src: "img/portfolio/safe.png", className: "img-responsive", alt: "" })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-4 portfolio-item" },
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#", className: "portfolio-link", "data-toggle": "modal" },
+	                                    _react2.default.createElement(
+	                                        "div",
+	                                        { className: "caption" },
+	                                        _react2.default.createElement(
+	                                            "div",
+	                                            { className: "caption-content" },
+	                                            _react2.default.createElement("i", { className: "fa fa-search-plus fa-3x" })
+	                                        )
+	                                    ),
+	                                    _react2.default.createElement("img", { src: "img/portfolio/submarine.png", className: "img-responsive", alt: "" })
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }]);
